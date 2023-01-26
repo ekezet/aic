@@ -13,7 +13,9 @@ This is a container for running Ansible playbooks if don't want to install it on
 
 ## If you want to just try it out
 
-`docker run -it --rm --network=host -v $PWD/playbooks:/home/ansible/playbooks frici/aic`
+```docker
+docker run -it --rm --network=host -v $PWD/playbooks:/home/ansible/playbooks frici/aic
+```
 
 ## Running with compose
 
