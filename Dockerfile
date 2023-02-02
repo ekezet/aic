@@ -6,7 +6,8 @@ RUN apk add --no-cache --virtual .tmp-build-dep gcc libc-dev libffi-dev && \
     echo 'include "/usr/share/nano/*.nanorc"' >> /etc/nanorc
 USER ansible
 ENV PATH="${PATH}:/home/ansible/.local/bin"
-RUN pip3 install --user ansible==7.1.0 boto3 && \
+ARG AV
+RUN pip3 install --user ansible==${AV} boto3 && \
     ansible-galaxy collection install amazon.aws azure.azcollection kubernetes.core community.docker && \
     rm -rf /home/ansible/.cache/*
 USER root
