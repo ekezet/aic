@@ -7,7 +7,7 @@ RUN apk add --no-cache --virtual .tmp-build-dep gcc libc-dev libffi-dev && \
 USER ansible
 ENV PATH="${PATH}:/home/ansible/.local/bin"
 ARG AV
-RUN pip3 install --user ansible==${AV} boto3 && \
+RUN pip3 install --user ansible==${AV} boto3 jmespath && \
     ansible-galaxy collection install amazon.aws azure.azcollection kubernetes.core community.docker && \
     rm -rf /home/ansible/.cache/*
 USER root
