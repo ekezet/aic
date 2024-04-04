@@ -6,34 +6,16 @@ This is a container for running Ansible playbooks if don't want to install it on
 
 ## Installed extra modules
 
-* amazon.aws
-* azure.azcollection
-* kubernetes.core
-* community.docker
+- amazon.aws
+- azure.azcollection
+- kubernetes.core
+- community.docker
 
 ## If you want to just try it out
 
 ```docker
 docker run -it --rm --network=host -v $PWD/playbooks:/home/ansible/playbooks frici/aic
 ```
-
-## Running with compose
-
-`docker-compose.yml`:
-
-```yaml
-version: "3"
-services:
-  winbox:
-    image: frici/aic
-    container_name: aic
-    restart: on-failure
-    network_mode: host
-    volumes:
-      - $PWD/playbooks:/home/ansible/playbooks
-```
-
-Copy and paste then `docker-compose up -d`
 
 ## Ansible Collections
 

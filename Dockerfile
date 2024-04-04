@@ -1,4 +1,4 @@
-FROM python:3.11-alpine3.17
+FROM python:3.11-alpine3.19
 WORKDIR /home/ansible
 RUN apk add --no-cache --virtual .tmp-build-dep gcc libc-dev libffi-dev && \
     apk add --no-cache openssh-client ca-certificates bash curl nano nano-syntax git && \
